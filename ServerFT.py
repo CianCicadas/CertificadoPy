@@ -21,7 +21,7 @@ while True:
     with open("Archivo.txt","rb") as archivo:
         verificar.verify(archivo.read(),firma)
 
-    with open("CC-"+archivo,"wb") as archivo:
+    with open("CC-"+"Archivo.txt","wb") as archivo:
         contenido = cliente.recv(1024)
         clave = PRNGnacl.prng(16)
         cifrador = AES.new(clave, AES.MODE_EAX)
